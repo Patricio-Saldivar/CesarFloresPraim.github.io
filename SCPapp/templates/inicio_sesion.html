@@ -1,0 +1,32 @@
+{% load staticfiles %}
+{% load pwa %}
+<html>
+<head>
+    {% progressive_web_app_meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Car Pool</title>
+    <link rel="stylesheet" href="{% static 'css/CSP.css' %}">
+</head>
+<body>
+<div class="sesion-mobile">
+    <form method="post">
+        {% csrf_token %}
+        <img src="{% static 'img/SCPcarro.png' %}" alt="" class="logo">
+        <h3 style="margin-bottom: 50px">School Car Pool</h3>
+        <div>
+            <h4 style="padding-top: 5px; color: rgba(196, 154, 132, 1);">Usuario</h4>
+            <input type="text" name="usuario" class="transparente-mobile">
+        </div>
+        <div>
+            <h4 style="padding-top: 5px; color: rgba(196, 154, 132, 1);">Contraseña</h4>
+            <input type="password" name="contrasenia" class="transparente-mobile">
+        </div>
+        <div>
+            <button style="margin-top: 10px;" class="iniciar" name="iniciar">Iniciar</button>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block head %}
+    <title>Car Pool</title>
+{% endblock %}
+{% block body %}
+    <body style="background: white" onload="mostrarContenido()">
+    <div id="loader" class="loader"></div>
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+
+        <div class="container-fluid">
+            <div class="navbar">
+                <ul>
+                    <li>
+                        <a href="#" class="text-info" style="font-size: 18px">{{ usuario }}&nbsp<img
+                                src="{% static 'img/man.png' %}" id="userPic"></a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="nav" id="nav">
+                <a href="#" class="nav__item top_nav_item"><img src="{% static 'img/.png' %}"
+                                                                id="logoPic"></a>
+                <a href="#" class="nav__item" id="fecha" style="text-align: center"></a>
+                <a href="#" class="nav__item" id="opcionInicio"
+                   onclick="showActiveContainer('#container-1','#container-2', '#container-3', '#container-4', '#container-5' ,'#container-6', '#container-7', '#container-8')"><i
+                        class="fas fa-at"></i>&nbspInicio</a>
+                <a href="#" class="nav__item" id="opcionDispositivos"
+                   onclick="showActiveContainer('#container-7','#container-1', '#container-3', '#container-2', '#container-4' ,'#container-6', '#container-5', '#container-8')"><i
+                        class="fas fa-tablet-alt"></i>&nbspX</a>
+                <a href="#" class="nav__item" id="opcionVender"
+                   onclick="showActiveContainer('#container-2','#container-1', '#container-3', '#container-5', '#container-4' ,'#container-6', '#container-7', '#container-8')"><i
+                        class="fas fa-dollar-sign"></i>&nbspY</a>
+                <form action="" method="post" id="operacion-realizar2">
+                    {% csrf_token %}
+                    <a href="#" class="nav__item" id="opcionStatus"
+                       onclick="showActiveContainer('#container-3','#container-1', '#container-2', '#container-5', '#container-4' ,'#container-6', '#container-7', '#container-8'); statusSubmit()"><i
+                            class="fas fa-spinner"></i>&nbspZ</a>
+                </form>
+                <a href="#" class="nav__item"></a>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" id="salir" name="salir"><i class="fas fa-power-off"></i>&nbspSalir</button>
+                </form>
+                <a href="#" class="espacio"></a>
+            </nav>
+        </div>
+        <div class="container-principal" id="container-1">
+        </div>
+        <div class="container-principal" id="container-2">
+        </div>
+        <div class="container-principal" id="container-3">
+        </div>
+        <div class="container-principal" id="container-7">
+        </div>
+    </div>
+    </body>
+{% endblock %}

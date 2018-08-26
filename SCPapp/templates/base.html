@@ -1,0 +1,78 @@
+<html lang="es">
+{% load staticfiles %}
+{% load pwa %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    {% progressive_web_app_meta %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/CSP.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src=" {% static 'js/SCPscript.js' %}"></script>
+    <title>fasdfasd</title>
+</head>
+<body style="background-color: white; margin: 0; ">
+<div class="container-fluid">
+    <div class="navbar" id="navbar">
+        <ul>
+            <li>
+                <div class="text-info" style="font-size: 18px">{{ usuario }}&nbsp<img
+                        src="{% static 'img/escuela.png' %}" id="userPic"></div>
+                <input type="text" hidden id="usuariot" value="{{ usuario }}">
+            </li>
+        </ul>
+    </div>
+    <nav class="nav" id="nav">
+        <div class="nav__item top_nav_item" onclick="hideNav();"><img
+                src="{% static 'img/SCP.png' %}"
+                id="logoPic"></div>
+
+        <div class="nav__item" id="fecha" style="text-align: center"></div>
+        <form action="{% url 'SCPapp:listar_matches' %}" method="get" id="listar_matches">
+            <div class="nav__item" id="opcionSCP"
+                 onclick="showActiveContainer('#container-1','#container-2', '#container-3', '#container-4','#container-5'); submitMatches()">
+                <i class="fas fa-car-side"></i>&nbspMi-SCP
+            </div>
+        </form>
+        <form action="{% url 'SCPapp:listar_familias' %}" method="get" id="listar_familias">
+            <input type="text" hidden value="{{ usuario }}" name="usuario">
+            <div class="nav__item" id="opcionCerca"
+                 onclick="showActiveContainer('#container-4','#container-2', '#container-3', '#container-1','#container-5'); submitListar()">
+                <i class="fas fa-address-book"></i>&nbspCercanos
+            </div>
+        </form>
+        <form action="{% url 'SCPapp:listar_solicitudes' %}" method="get" id="listar_solicitudes">
+            <div class="nav__item" id="opcionSCP"
+                 onclick="showActiveContainer('#container-3','#container-1', '#container-2', '#container-4', '#container-5'); submitSolicitud()">
+                <i class="fab fa-telegram-plane"></i>&nbspSolicitudes
+            </div>
+        </form>
+        <div class="nav__item" id="opcionVentas"
+             onclick="showActiveContainer('#container-2','#container-1', '#container-3', '#container-4','#container-5')">
+            <i class="fas fa-cog"></i>&nbspMi cuenta
+        </div>
+
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" id="salir" name="salir"><i class="fas fa-power-off"></i>&nbspSalir</button>
+        </form>
+    </nav>
+</div>
+<div class="container-principal" id="container-1">
+    {% include 'mi-SCP.html' %}
+</div>
+<div class="container-principal" id="container-2">
+    {% include 'config.html' %}
+</div>
+<div class="container-principal" id="container-3">
+    {% include 'solicitudes.html' %}
+</div>
+<div class="container-principal" id="container-4">
+    {% include 'cercanos.html' %}
+</div>
+</body>
+</html>

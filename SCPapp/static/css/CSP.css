@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda|Merriweather+Sans');
+
+html,
+body {
+    background-color: rgba(247, 215, 148, 0.6);
+    font-family: 'Cutive Mono', monospace;
+    overflow: hidden;
+}
+
+div.sesion {
+    height: 100%;
+    background-color: rgba(247, 241, 227, 1);
+    float: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 95%;
+    max-width: 25%;
+    text-align: center;
+    box-shadow: -10px 0 10px 1px rgba(247, 241, 227, .5);
+
+}
+
+div.sesion-mobile {
+    height: 100%;
+    width: 50%;
+    background-color: rgba(247, 241, 227, 1);
+    text-align: center;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+}
+
+input.transparente {
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: solid 1px rgba(196, 154, 132, .7);;
+    width: 90%;
+    height: 30px;
+}
+
+input.transparente-mobile {
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: solid 1px rgba(196, 154, 132, .7);;
+    width: 90%;
+    height: 10%;
+    line-height: 40px;
+    font-size: 17px;
+}
+
+img.logo {
+    max-width: 30%;
+    max-height: 30%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button.iniciar {
+    width: 90%;
+    height: 40px;
+    background-color: rgba(247, 215, 148, 0.4);
+    border: none;
+
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(29, 33, 32, 1);
+    height: 60px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    font-size: 15px;
+    float: right;
+    text-decoration: none;
+}
+
+li a:link {
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+    height: 60px;
+    text-align: center;
+
+}
+
+.color_white {
+    color: white;
+}
+
+#userPic, #logoPic {
+    max-height: 50px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+/********************\
+  $Layout ☰
+\********************/
+
+/*Damos estilos al menú*/
+.nav {
+    overflow: scroll;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(29, 33, 32, 1);
+    width: 200px;
+
+}
+
+/*Estilos de los li del menú*/
+.nav__item, #salir {
+    display: block;
+    width: 100%;
+    margin: 0;
+    height: 60px;
+    padding: 15px;
+    position: relative;
+    border-bottom: .5px solid rgba(59, 62, 61, 1);
+    border-top: .5px solid rgba(59, 62, 61, 1);
+    background-color: transparent;
+    font-size: 20px;
+    text-align: left;
+    color: rgba(221, 231, 228, 1);
+}
+
+.top_nav_item {
+    background-color: #33d9b2;
+    padding: 0;
+    padding-bottom: 2px;
+    text-align: center;
+}
+
+.espacio {
+    height: 100%;
+}
+
+.nav__item:link {
+    text-decoration: none;
+}
+
+#salir {
+    color: #E51A4C;
+    margin: 0;
+    border: 0;
+}
+
+.container-principal {
+    position: absolute;
+    padding: 10px;
+    margin-left: 210px; /*Cambiado por javascript*/
+    margin-top: 70px;
+    background-color: rgba(207, 205, 211, 0.2);
+    overflow: scroll;
+}
+
+h1.cc {
+    color: #404040;
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: solid 10px rgba(120, 224, 143, 1.0);
+}
+
+h4.cc1 {
+    color: #404040;
+    display: block;
+}
+
+div.cc2 {
+    padding: 20px;
+    position: relative;
+    border-radius: 5% 5% 0 0; /*it can be fixed too*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    max-width: 500px;
+    max-height: 500px;
+    margin: auto;
+
+    color: #404040;
+
+    background-color: rgba(120, 224, 143, 0.5);
+
+}
+
+div.cc3 {
+    padding: 20px;
+    position: relative;
+    border-radius: 0 0 5% 5%; /*it can be fixed too*/
+    background-color: rgba(120, 224, 143, 1.0);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    max-width: 500px;
+    max-height: 500px;
+    margin: auto;
+    color: #404040;
+
+}
+
+#customers {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 2px solid #000000;
+    padding: 12px;
+    text-align: center;
+}
+
+#customers tr:nth-child(odd) {
+    background-color: #cccccc;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ffffb3;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #9ae59a;
+    color: #202020;
+    text-align: center;
+}
+
+.logo {
+    max-width: 200px;
+    max-height: 200px;
+    width: 200px;
+    height: 200px;
+}

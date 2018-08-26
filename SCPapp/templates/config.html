@@ -1,0 +1,27 @@
+<h1 class="cc">Porfavor llena los datos</h1>
+<div id="pp">
+
+</div>
+<div class="cc2">
+    <form action="#">
+        {% csrf_token %}
+    </form>
+    <h2> Datos de Domicilio: </h2>
+    <h4 class="cc1"> Colonia </h4>
+
+    <input placeholder="Colonia">
+    <br>
+    <h4 class="cc1"> Calle y numero </h4>
+    <input placeholder="Calle">
+    <input placeholder="Numero">
+    <br>
+    <h4 class="cc1"> Codigo Postal </h4>
+    <input placeholder="CP">
+</div>
+
+<div class="cc3">
+    <h2> Datos para viaje: </h2>
+    <h4 class="cc1"> Cantidad de pasajeros posibles </h4>
+    <input placeholder="Numero de pasajeros">
+    <button>Actualizar</button>
+</div>

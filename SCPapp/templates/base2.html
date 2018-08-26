@@ -1,0 +1,66 @@
+<html lang="es">
+{% load staticfiles %}
+{% load pwa %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    {% progressive_web_app_meta %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/CSP.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src=" {% static 'js/SCPscript.js' %}"></script>
+    <title>fasdfasd</title>
+</head>
+<body style="background-color: white; margin: 0; " onload="mostrarContenido()">
+    <div class="container-fluid">
+        <div class="navbar" id="navbar">
+            <ul>
+                <li>
+                    <div class="text-info" style="font-size: 18px">{{ usuario }}&nbsp<img
+                            src="{% static 'img/man.png' %}" id="userPic"></div>
+                </li>
+            </ul>
+        </div>
+        <nav class="nav" id="nav">
+            <div class="nav__item top_nav_item" onclick="hideNav();"><img
+                    src="{% static 'img/appgo.png' %}"
+                    id="logoPic"></div>
+
+            <div class="nav__item" id="fecha" style="text-align: center">Admin</div>
+            <div class="nav__item" id="opcionInicio"
+                 onclick="showActiveContainer('#container-1','#container-2', '#container-3', '#container-4', '#container-5' ,'#container-6', '#container-7', '#container-8')">
+                <i
+                        class="fas fa-at"></i>&nbspInicio
+            </div>
+            <div class="nav__item" id="opcionDispositivos"
+                 onclick="showActiveContainer('#container-7','#container-1', '#container-3', '#container-2', '#container-4' ,'#container-6', '#container-5', '#container-8')">
+                <i
+                        class="fas fa-tablet-alt"></i>&nbsp
+            </div>
+            <div class="nav__item" id="opcionVender"
+                 onclick="showActiveContainer('#container-5','#container-1', '#container-3', '#container-2', '#container-4' ,'#container-6', '#container-7', '#container-8')">
+                <i
+                        class="fab fa-app-store"></i>&nbspTienda
+            </div>
+            <div class="nav__item" id="opcionVentas"
+                 onclick="showActiveContainer('#container-2','#container-1', '#container-3', '#container-4', '#container-5' ,'#container-6', '#container-7', '#container-8')">
+                <i
+                        class="fas fa-chart-line"></i>&nbspVentas
+            </div>
+
+
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" id="salir" name="salir"><i class="fas fa-power-off"></i>&nbspSalir</button>
+            </form>
+        </nav>
+    </div>
+    <div class="container-principal" id="container-1">
+    </div>
+    <div class="container-principal" id="container-2">
+    </div>
+    <div class="container-principal" id="container-3">
+    </div>
+</body>
+</html>
